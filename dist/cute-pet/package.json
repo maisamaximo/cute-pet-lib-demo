@@ -1,0 +1,24 @@
+{
+  "name": "cute-pet",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.1.2",
+    "@angular/core": "^11.1.2",
+    "bootstrap": "^5.1.3",
+    "@angular/material": "^11.2.13",
+    "@types/uuid": "^8.3.4"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/cute-pet.umd.js",
+  "module": "fesm2015/cute-pet.js",
+  "es2015": "fesm2015/cute-pet.js",
+  "esm2015": "esm2015/cute-pet.js",
+  "fesm2015": "fesm2015/cute-pet.js",
+  "typings": "cute-pet.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
+  }
+}

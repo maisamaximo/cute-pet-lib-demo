@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Cute pet info</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="petForm" class="d-grid">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Cute name" value="" formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Photo URL</mat-label>
+      <input
+        matInput
+        placeholder="Ex. https://catphoto.com"
+        value=""
+        formControlName="photoUrls"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <select matNativeControl required formControlName="status">
+        <option value="available" selected>Available</option>
+        <option value="pending">Pending</option>
+        <option value="sold">Sold</option>
+      </select>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-flat-button color="primary" (click)="onSubmit()">Add</button>
+  <button mat-stroked-button color="primary" (click)="closeModal()">
+    Cancel
+  </button>
+</div>

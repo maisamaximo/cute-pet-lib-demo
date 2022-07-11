@@ -1,0 +1,20 @@
+<mat-card class="pet-card" fxFlex.lt-md>
+  <img mat-card-image [src]="image" alt="Photo of a pet" />
+  <div>
+    <mat-card-title>{{ name }}</mat-card-title>
+    <mat-card-subtitle color="tag-status">
+      <mat-chip-list aria-label="Status selection">
+        <mat-chip color="accent" selected>{{ status }}</mat-chip>
+      </mat-chip-list>
+    </mat-card-subtitle>
+  </div>
+  <hr />
+  <mat-card-actions class="m-auto">
+    <button mat-flat-button mat-button color="primary" (click)="onEdit()">
+      Edit
+    </button>
+    <button mat-stroked-button mat-button color="primary" (click)="onDelete()">
+      Delete
+    </button>
+  </mat-card-actions>
+</mat-card>

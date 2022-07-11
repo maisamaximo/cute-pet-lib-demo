@@ -1,0 +1,27 @@
+.pet-card {
+  max-width: 400px;
+}
+
+.pet-card img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.mat-card-title {
+  display: inline-block;
+}
+
+.mat-card-subtitle {
+  display: inline-block;
+  margin-bottom: 0px;
+  float: right;
+}
+
+hr {
+  border: #6739b7 1px solid;
+}
+
+button {
+  text-transform: uppercase;
+}

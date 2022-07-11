@@ -1,0 +1,67 @@
+<div class="container">
+  <mat-tab-group
+    *ngIf="petAvailable$ | async as petAvailable; else loadingError"
+  >
+    <mat-tab label="Available">
+      <div class="list">
+        <ng-container *ngFor="let pet of petAvailable">
+          <lib-pet-card-overview
+            [id]="pet.id"
+            [name]="pet.name"
+            [status]="pet.status"
+            [image]="pet.photoUrls[0]"
+          ></lib-pet-card-overview>
+        </ng-container>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Pending">
+      <div class="list">
+        <ng-container *ngFor="let pet of petPendent$ | async">
+          <lib-pet-card-overview
+            [id]="pet.id"
+            [name]="pet.name"
+            [status]="pet.status"
+            [image]="pet.photoUrls[0]"
+          ></lib-pet-card-overview>
+        </ng-container>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Sold">
+      <div class="list">
+        <ng-container *ngFor="let pet of petSold$ | async">
+          <lib-pet-card-overview
+            [id]="pet.id"
+            [name]="pet.name"
+            [status]="pet.status"
+            [image]="pet.photoUrls[0]"
+          ></lib-pet-card-overview>
+        </ng-container>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<ng-template #loadingError>
+  <div class="loadingError" *ngIf="error$ | async; else loading">
+    <mat-icon
+      color="primary"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      class="m-auto"
+    >
+      error
+    </mat-icon>
+
+    <span class="pb-2 m-auto">Error loading data. Try again later</span>
+    <button mat-flat-button color="primary" (click)="onRefresh()">
+      Refresh
+    </button>
+  </div>
+
+  <ng-template #loading>
+    <mat-spinner class="m-auto"></mat-spinner>
+    <p class="pt-2 text-center">Loading data...</p>
+  </ng-template>
+</ng-template>

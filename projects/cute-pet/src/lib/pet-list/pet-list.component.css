@@ -1,0 +1,18 @@
+.container {
+  padding: 5em;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding-block: 4rem;
+}
+
+.loadingError {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
