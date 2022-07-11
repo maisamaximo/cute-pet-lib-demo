@@ -1,4 +1,4 @@
-<h1 align="center">ManageCutePet :heart_eyes_cat:</h1>
+<h1 align="center">Cute Pet Lib Demo :heart_eyes_cat:</h1>
 
 <p align="center">
   <img  src="https://user-images.githubusercontent.com/16991001/178373717-c0b476e5-52e5-467b-b3d8-e7422755b430.png" />
@@ -26,17 +26,15 @@
 ## Demo
 
 <p align="center">
-  <img  src="https://user-images.githubusercontent.com/16991001/177826966-171f5986-ccb7-4747-bf72-4e75d17a2eea.gif" />
+  <img  src="https://user-images.githubusercontent.com/16991001/178374364-1cc35167-52bf-4c85-acf2-e315a389328b.gif" />
 <p>
-
 
 ## Improvements
 
-- [ ] Implement unit tests
+- [ ] Improve unit tests
 - [ ] Refactor code
 - [ ] Fix save button when editing (stopped working)
-- [ ] Convert application into a library
-- [ ] Publish the library for use <a href="https://github.com/maisamaximo/app_into_lib/upload">https://github.com/maisamaximo/app_into_lib/upload</a>
+- [ ] Publish the library
 - [ ] Generate and validate id 
 
 <p align="center">𝙼𝚊𝚍𝚎 𝚠𝚒𝚝𝚑 𝚕𝚘𝚟𝚎 ❥<p>
