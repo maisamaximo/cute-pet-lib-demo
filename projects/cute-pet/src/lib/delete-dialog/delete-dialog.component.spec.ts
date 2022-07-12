@@ -8,7 +8,7 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 
-describe('DeleteDialogComponent', () => {
+describe(DeleteDialogComponent.name, () => {
   let component: DeleteDialogComponent;
   let fixture: ComponentFixture<DeleteDialogComponent>;
 
@@ -37,7 +37,7 @@ describe('DeleteDialogComponent', () => {
   });
 
   describe('deletePet', () => {
-    it('makes expected calls', () => {
+    it('should make expected calls to delete a pet when clicking the button', () => {
       const cutePetServiceStub: CutePetService =
         fixture.debugElement.injector.get(CutePetService);
       spyOn(cutePetServiceStub, 'deletePet').and.callThrough();

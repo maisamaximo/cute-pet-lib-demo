@@ -6,7 +6,7 @@ import {
 import { CutePetModel } from '../models/cute-pet.model';
 import { CutePetService } from './cute-pet.service';
 
-describe('CutePetService', () => {
+describe(CutePetService.name, () => {
   let service: CutePetService;
 
   beforeEach(() => {
@@ -22,7 +22,7 @@ describe('CutePetService', () => {
   });
 
   describe('editPet', () => {
-    it('makes expected calls', () => {
+    it('should makes expected calls to edit a pet', () => {
       const httpTestingController = TestBed.inject(HttpTestingController);
       const cutePetModelStub: CutePetModel = <any> {};
       service.editPet(cutePetModelStub).subscribe((res) => {
@@ -38,7 +38,7 @@ describe('CutePetService', () => {
   });
 
   describe('createPet', () => {
-    it('makes expected calls', () => {
+    it('should makes expected calls to create a pet', () => {
       const httpTestingController = TestBed.inject(HttpTestingController);
       const cutePetModelStub: CutePetModel = <any> {};
       service.createPet(cutePetModelStub).subscribe((res) => {

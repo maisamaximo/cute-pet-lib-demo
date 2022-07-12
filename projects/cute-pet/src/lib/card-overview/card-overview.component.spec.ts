@@ -3,7 +3,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ModalService } from './../services/modal.service';
 import { CardOverviewComponent } from './card-overview.component';
 
-describe('CardOverviewComponent', () => {
+describe(CardOverviewComponent.name, () => {
   let component: CardOverviewComponent;
   let fixture: ComponentFixture<CardOverviewComponent>;
 
@@ -25,7 +25,7 @@ describe('CardOverviewComponent', () => {
   });
 
   describe('onEdit', () => {
-    it('makes expected calls', () => {
+    it('should make expected calls to open the modal to edit when clicking the button', () => {
       const modalServiceStub: ModalService =
         fixture.debugElement.injector.get(ModalService);
       spyOn(modalServiceStub, 'openModal').and.callThrough();
@@ -35,7 +35,7 @@ describe('CardOverviewComponent', () => {
   });
 
   describe('onDelete', () => {
-    it('makes expected calls', () => {
+    it('should make expected calls to open the modal to confirm delete when clicking the button', () => {
       const modalServiceStub: ModalService =
         fixture.debugElement.injector.get(ModalService);
       spyOn(modalServiceStub, 'openModal').and.callThrough();

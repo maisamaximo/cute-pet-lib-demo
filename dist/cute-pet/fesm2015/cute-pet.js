@@ -205,11 +205,11 @@ class PetFormComponent {
         return payload;
     }
     updateForm(pet) {
-        const petURL = pet.photoUrls[0].toString().replace(/[[\]]/g, '');
+        const photoURL = pet.photoUrls instanceof Array ? pet.photoUrls[0] : [pet.photoUrls];
         this.petForm.patchValue({
             id: pet.id,
             name: pet.name,
-            photoUrls: [petURL],
+            photoUrls: photoURL,
             status: pet.status,
         });
         return this.petForm.value;
@@ -461,17 +461,12 @@ class PetListComponent {
         this.onRefresh();
     }
     getPets() {
-        this.petAvailable$ = this.cutePetService.getPetsByStatus('available').pipe(catchError((error) => {
-            console.error(error);
-            this.error$.next(true);
-            return EMPTY;
-        }));
-        this.petPendent$ = this.cutePetService.getPetsByStatus('pending').pipe(catchError((error) => {
-            console.error(error);
-            this.error$.next(true);
-            return EMPTY;
-        }));
-        this.petSold$ = this.cutePetService.getPetsByStatus('sold').pipe(catchError((error) => {
+        this.petAvailable$ = this.getPetsByStatus('available');
+        this.petPendent$ = this.getPetsByStatus('pending');
+        this.petSold$ = this.getPetsByStatus('sold');
+    }
+    getPetsByStatus(status) {
+        return this.cutePetService.getPetsByStatus(status).pipe(catchError((error) => {
             console.error(error);
             this.error$.next(true);
             return EMPTY;

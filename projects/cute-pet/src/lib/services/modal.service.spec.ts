@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalService } from './modal.service';
 
-describe('ModalService', () => {
+describe(ModalService.name, () => {
   let service: ModalService;
 
   beforeEach(() => {

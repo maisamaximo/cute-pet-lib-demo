@@ -89,12 +89,13 @@ export class PetFormComponent implements OnInit {
   }
 
   updateForm(pet: any): any {
-    const petURL = pet.photoUrls[0].toString().replace(/[[\]]/g, '');
+    const photoURL =
+      pet.photoUrls instanceof Array ? pet.photoUrls[0] : [pet.photoUrls];
 
     this.petForm.patchValue({
       id: pet.id,
       name: pet.name,
-      photoUrls: [petURL],
+      photoUrls: photoURL,
       status: pet.status,
     });
     return this.petForm.value;

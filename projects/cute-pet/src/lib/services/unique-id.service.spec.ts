@@ -14,13 +14,17 @@ describe(UniqueIdService.name, () => {
     expect(service).toBeTruthy();
   });
 
-  it('function generateRandomId() should generate a random Id number when called', () => {
-    const id = service.generateRandomId();
-    expect(id).toEqual(jasmine.any(Number));
+  describe('generateRandomId', () => {
+    it('should generate a random Id number when called', () => {
+      const id = service.generateRandomId();
+      expect(id).toEqual(jasmine.any(Number));
+    });
   });
 
-  it('function checkIdExists() should check is an Id exist when called passing an Id and a list of existent Ids', () => {
-    const id = service.checkIdExists([], 2);
-    expect(id).toBeTrue();
+  describe('checkIdExists', () => {
+    it('should check is an Id exist when called passing an Id and a list of existent Ids', () => {
+      const id = service.checkIdExists([], 2);
+      expect(id).toBeTrue();
+    });
   });
 });

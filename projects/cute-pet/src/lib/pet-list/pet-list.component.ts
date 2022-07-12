@@ -22,23 +22,13 @@ export class PetListComponent implements OnInit {
   }
 
   getPets(): void {
-    this.petAvailable$ = this.cutePetService.getPetsByStatus('available').pipe(
-      catchError((error) => {
-        console.error(error);
-        this.error$.next(true);
-        return EMPTY;
-      })
-    );
+    this.petAvailable$ = this.getPetsByStatus('available');
+    this.petPendent$ = this.getPetsByStatus('pending');
+    this.petSold$ = this.getPetsByStatus('sold');
+  }
 
-    this.petPendent$ = this.cutePetService.getPetsByStatus('pending').pipe(
-      catchError((error) => {
-        console.error(error);
-        this.error$.next(true);
-        return EMPTY;
-      })
-    );
-
-    this.petSold$ = this.cutePetService.getPetsByStatus('sold').pipe(
+  getPetsByStatus(status: string): Observable<CutePetModel[]> {
+    return this.cutePetService.getPetsByStatus(status).pipe(
       catchError((error) => {
         console.error(error);
         this.error$.next(true);

@@ -3,7 +3,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ModalService } from './../services/modal.service';
 import { BtnAddNewComponent } from './btn-add-new.component';
 
-describe('BtnAddNewComponent', () => {
+describe(BtnAddNewComponent.name, () => {
   let component: BtnAddNewComponent;
   let fixture: ComponentFixture<BtnAddNewComponent>;
 
@@ -25,7 +25,7 @@ describe('BtnAddNewComponent', () => {
   });
 
   describe('addPet', () => {
-    it('makes expected calls', () => {
+    it('should make expected calls to open the modal to add a new pet when clicking the button', () => {
       const modalServiceStub: ModalService =
         fixture.debugElement.injector.get(ModalService);
       spyOn(modalServiceStub, 'openModal').and.callThrough();
